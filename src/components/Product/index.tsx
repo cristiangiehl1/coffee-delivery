@@ -32,12 +32,7 @@ interface ProductProps {
 
 export function Product({ product }: ProductProps) {
     const [amount, setAmount] = useState<number>(1)
-    const { addItemToCart } = useCart();
-
-
-    function formatPrice(price: number) {
-        return `${price.toFixed(2).replace('.', ',')}`
-    }
+    const { addItemToCart, formatPrice } = useCart();
 
     function handleIncreaseAmount () {
         setAmount(prevState => prevState + 1)        
